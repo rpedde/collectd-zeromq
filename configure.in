@@ -1,6 +1,6 @@
 # Required initializer
 AC_PREREQ(2.59)
-AC_INIT(collectd-zeromq, 0.0, ron@pedde.com)
+AC_INIT([collectd-zeromq], m4_esyscmd([date +0.0.%Y%m%d] | tr -d '\n'), ron@pedde.com)
 AM_INIT_AUTOMAKE
 AC_CONFIG_SRCDIR([src/zeromq.c])
 AC_CONFIG_HEADER([config.h])
