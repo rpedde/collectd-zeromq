@@ -17,7 +17,7 @@ AC_ARG_ENABLE(debug, [    --enable-debug                Enable debugging switche
                        esac ])
 
 
-# check for libcarbon
+# check for libzmq
 PKG_CHECK_MODULES([ZMQ], [libzmq],, AC_MSG_ERROR([libzmq is required.]))
 
 # check for collectd
