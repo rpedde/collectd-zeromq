@@ -1,0 +1,9 @@
+This file was backported from collectd 5.1 to work on collectd 4.10.
+
+It was part of the official collectd git tree, and according to the collectd wikie (http://collectd.org/wiki/index.php/Plugin:ZeroMQ), it is
+
+Copyright (C)
+2005-2010 Florian Forster
+2009 Aman Gupta
+2010 Julien Ammous
+

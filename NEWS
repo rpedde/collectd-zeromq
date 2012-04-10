@@ -1,0 +1,5 @@
+Pulled zeromq plugin sources from:
+
+git clone git://git.verplant.org/collectd.git
+
+in the ja/zeromq branch, sha: 8cd041bbb711426aaca745db679631f7386ed97e
