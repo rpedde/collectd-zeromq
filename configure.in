@@ -1,0 +1,35 @@
+# Required initializer
+AC_PREREQ(2.59)
+AC_INIT(collectd-zeromq, 0.0, ron@pedde.com)
+AM_INIT_AUTOMAKE
+AC_CONFIG_SRCDIR([src/zeromq.c])
+AC_CONFIG_HEADER([config.h])
+
+# Checks for programs.
+AC_PROG_CC
+AM_PROG_LIBTOOL
+
+AC_ARG_ENABLE(debug, [    --enable-debug                Enable debugging switches],
+		       [ case "${enableval}" in
+                         yes) CFLAGS="-O0 -g -Wall";;
+                         no) CFLAGS="-O2 -g -Wall -DNDEBUG";;
+                         *) AC_MSG_ERROR(bad value ${enableval} for --enable-debug);;
+                       esac ])
+
+
+# check for libcarbon
+PKG_CHECK_MODULES([ZMQ], [libzmq],, AC_MSG_ERROR([libzmq is required.]))
+
+# check for collectd
+collectd_required="yes"
+CHECK_COLLECTD()
+
+# Checks for typedefs, structures, and compiler characteristics.
+AC_C_CONST
+
+# Checks for library functions.
+AC_CHECK_FUNCS([strcasecmp strspn strstr])
+
+
+# Write config.status and the Makefile
+AC_OUTPUT(Makefile src/Makefile)
